@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SecureMailScope | Cybersecurity Command Center</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="shield">✦</div><div><b>SecureMailScope</b><span>FORENSIC COMMAND CENTER</span></div></div>
+    <nav>
+      <button class="nav active" data-target="overview">◉ Overview</button>
+      <button class="nav" data-target="pcap">⌁ PCAP Forensics</button>
+      <button class="nav" data-target="sessions">◌ Sessions</button>
+      <button class="nav" data-target="tls">⛨ TLS & Certificates</button>
+      <button class="nav" data-target="findings">⚠ Findings</button>
+      <button class="nav" data-target="ai">✦ AI Risk Engine</button>
+      <button class="nav" data-target="ledger">⛓ Evidence Ledger</button>
+      <button class="nav" data-target="reports">▣ Reports</button>
+    </nav>
+    <div class="sidefoot"><span class="dot"></span> Analysis Engine Online</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><span class="eyebrow">BLOCKCHAIN & CYBERSECURITY</span><h1>Cryptographic Email Security</h1></div>
+      <div class="status"><span class="dot"></span> SECUREMAILSCOPE LIVE</div>
+    </header>
+
+    <section id="overview" class="view active">
+      <div class="hero">
+        <div>
+          <span class="pill">PS 26159 • NTRO</span>
+          <h2>From raw PCAP evidence<br><em>to a security verdict.</em></h2>
+          <p>Passive SMTP / IMAP / POP3 forensics with TLS analysis, AI-assisted risk assessment and tamper-evident evidence integrity.</p>
+          <div class="actions">
+            <button class="primary" data-target="pcap">Start PCAP Analysis →</button>
+            <button class="ghost demo-btn" data-demo="vulnerable">Run Vulnerable Demo</button>
+            <button class="ghost demo-btn" data-demo="secure">Run Secure Demo</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="orb"><span>PCAP</span><b>→</b><span>TLS</span><b>→</b><span>AI</span><b>→</b><span>LEDGER</span></div>
+          <div class="scanline"></div>
+        </div>
+      </div>
+
+      <div class="grid4">
+        <div class="metric"><span>Security Posture</span><strong id="score">—</strong><small id="posture">Awaiting analysis</small></div>
+        <div class="metric"><span>Sessions</span><strong id="sessionsCount">0</strong><small>TCP flows reconstructed</small></div>
+        <div class="metric"><span>High Findings</span><strong id="highCount">0</strong><small>Evidence-backed</small></div>
+        <div class="metric"><span>Anomalies</span><strong id="anomalyCount">0</strong><small>IsolationForest</small></div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel">
+          <div class="panelhead"><h3>Protocol Intelligence</h3><span>LIVE</span></div>
+          <div class="protocols">
+            <div><b>SMTP</b><strong id="smtp">0</strong></div>
+            <div><b>IMAP</b><strong id="imap">0</strong></div>
+            <div><b>POP3</b><strong id="pop3">0</strong></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panelhead"><h3>Forensic Pipeline</h3><span>PS 26159</span></div>
+          <div class="pipeline"><i>PCAP</i><b>→</b><i>TCP</i><b>→</b><i>TLS</i><b>→</b><i>AI</i><b>→</b><i>LEDGER</i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pcap" class="view">
+      <div class="sectiontitle"><span class="eyebrow">01 / EVIDENCE INGESTION</span><h2>PCAP Forensic Analyzer</h2><p>Upload a real authorized SMTP/IMAP/POP3 PCAP/PCAPNG. The backend parses the uploaded bytes; demo evidence is only for optional demonstration.</p></div>
+      <div class="upload panel">
+        <div class="drop" id="drop"><div class="uploadicon">⇧</div><h3>Drop PCAP / PCAPNG here</h3><p>or choose a file from your computer</p><input id="file" type="file" accept=".pcap,.pcapng"><label for="file" class="primary small">Choose PCAP</label></div>
+        <div class="scanbox"><div class="scanhead"><span>FORENSIC ENGINE</span><b id="scanStatus">IDLE</b></div><div class="progress"><i id="progress"></i></div><div id="steps"><span>○ Real PCAP ingestion</span><span>○ Protocol detection</span><span>○ TCP reconstruction</span><span>○ TLS / X.509 analysis</span><span>○ Risk & anomaly assessment</span><span>○ Evidence ledger</span></div></div>
+      </div>
+    </section>
+
+    <section id="sessions" class="view">
+      <div class="sectiontitle"><span class="eyebrow">02 / NETWORK FORENSICS</span><h2>Session Explorer</h2></div>
+      <div class="panel tablewrap"><table><thead><tr><th>Session</th><th>Protocol</th><th>Flow</th><th>TLS</th><th>STARTTLS</th><th>Risk</th></tr></thead><tbody id="sessionTable"></tbody></table></div>
+    </section>
+
+    <section id="tls" class="view">
+      <div class="sectiontitle"><span class="eyebrow">03 / CRYPTOGRAPHIC EVIDENCE</span><h2>TLS & Certificate Laboratory</h2></div>
+      <div id="tlsCards" class="cards"></div>
+    </section>
+
+    <section id="findings" class="view">
+      <div class="sectiontitle"><span class="eyebrow">04 / REMEDIATION</span><h2>Prioritized Security Findings</h2></div>
+      <div id="findingList" class="findinglist"></div>
+    </section>
+
+    <section id="ai" class="view">
+      <div class="sectiontitle"><span class="eyebrow">05 / INTELLIGENCE</span><h2>AI Risk Engine</h2><p>Explainable ML models operate on verified cryptographic/session features.</p></div>
+      <div class="grid2"><div class="panel aiPanel"><div class="aiRing" id="aiScore">—</div><h3 id="aiLabel">Awaiting analysis</h3><p id="aiConfidence"></p></div><div class="panel"><h3>Model Signals</h3><div id="featureList" class="features"></div></div></div>
+      <div class="panel"><h3>AI-assisted verdict</h3><p id="aiSummary">Run an analysis to generate the verdict.</p></div>
+    </section>
+
+    <section id="ledger" class="view">
+      <div class="sectiontitle"><span class="eyebrow">06 / BLOCKCHAIN INTEGRITY</span><h2>Evidence Integrity Ledger</h2><p>SHA-256 chained evidence records provide tamper-evident forensic integrity.</p></div>
+      <div class="ledger panel"><div class="chain" id="chain"></div></div>
+    </section>
+
+    <section id="reports" class="view">
+      <div class="sectiontitle"><span class="eyebrow">07 / OUTPUT</span><h2>Forensic Reports</h2></div>
+      <div class="reportgrid"><button class="reportbtn" data-format="json">↓ JSON<br><small>Machine-readable evidence</small></button><button class="reportbtn" data-format="html">↓ HTML<br><small>Shareable report</small></button><button class="reportbtn" data-format="pdf">↓ PDF<br><small>Judge-ready report</small></button></div>
+      <div class="panel"><h3>Report contents</h3><div class="checkgrid"><span>✓ Executive posture</span><span>✓ Protocol analysis</span><span>✓ TLS evidence</span><span>✓ Certificate evidence</span><span>✓ AI risk assessment</span><span>✓ Prioritized findings</span><span>✓ Recommendations</span><span>✓ Evidence integrity hash</span></div></div>
+    </section>
+  </main>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>

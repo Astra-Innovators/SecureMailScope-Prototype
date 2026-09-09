@@ -1,0 +1,83 @@
+{
+  "file_name": "vulnerable_synthetic_smtps_pop3s.pcap",
+  "sessions": [
+    {
+      "session_id": "SESSION_101",
+      "protocol": "SMTP",
+      "source": "10.10.0.21",
+      "destination": "10.10.0.5",
+      "source_port": 52341,
+      "destination_port": 587,
+      "packets": 44,
+      "payload_bytes": 9132,
+      "starttls_detected": true,
+      "encrypted": true,
+      "tcp_reconstructed": true,
+      "tls": {
+        "tls_detected": true,
+        "version": "TLS 1.0",
+        "cipher_suite": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+        "key_exchange": "RSA",
+        "handshake_status": "Legacy TLS handshake observed",
+        "forward_secrecy": false
+      },
+      "certificate": {
+        "subject": "mail.demo.local",
+        "issuer": "Demo Enterprise CA",
+        "valid_from": "2024-01-01",
+        "valid_to": "2025-01-01",
+        "expired": true,
+        "expires_soon": false,
+        "public_key_algorithm": "RSA",
+        "key_length": 1024,
+        "signature_algorithm": "SHA1withRSA"
+      },
+      "evidence": [
+        "SMTP submission",
+        "STARTTLS advertised",
+        "TLS 1.0 negotiated",
+        "3DES cipher observed",
+        "Expired RSA-1024 certificate"
+      ]
+    },
+    {
+      "session_id": "SESSION_102",
+      "protocol": "POP3",
+      "source": "10.10.0.25",
+      "destination": "10.10.0.7",
+      "source_port": 51123,
+      "destination_port": 995,
+      "packets": 31,
+      "payload_bytes": 6110,
+      "starttls_detected": false,
+      "encrypted": true,
+      "tcp_reconstructed": true,
+      "tls": {
+        "tls_detected": true,
+        "version": "TLS 1.1",
+        "cipher_suite": "TLS_RSA_WITH_AES_256_CBC_SHA",
+        "key_exchange": "RSA",
+        "handshake_status": "Legacy TLS handshake observed",
+        "forward_secrecy": false
+      },
+      "certificate": {
+        "subject": "pop.demo.local",
+        "issuer": "Demo Enterprise CA",
+        "valid_from": "2025-01-01",
+        "valid_to": "2026-06-01",
+        "expired": true,
+        "expires_soon": false,
+        "public_key_algorithm": "RSA",
+        "key_length": 1024,
+        "signature_algorithm": "SHA1withRSA"
+      },
+      "evidence": [
+        "POP3S port 995",
+        "TLS 1.1",
+        "RSA key exchange",
+        "Expired certificate",
+        "RSA-1024"
+      ]
+    }
+  ]
+}
