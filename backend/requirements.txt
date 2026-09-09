@@ -1,0 +1,6 @@
+Flask>=3.0,<4
+scapy>=2.6,<3
+cryptography>=43,<46
+reportlab>=4.2,<5
+scikit-learn>=1.5,<2
+numpy>=1.26,<3
